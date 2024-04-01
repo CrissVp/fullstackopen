@@ -1,11 +1,13 @@
+const { ENVIRONMENT } = require("./config");
+
 const info = (...params) => {
-	if (process.env.NODE_ENV !== 'test') {
+	if (ENVIRONMENT !== 'test') {
 		console.log(...params);
 	}
 };
 
 const error = (...params) => {
-	if (process.env.NODE_ENV !== 'test') {
+	if (ENVIRONMENT !== 'test') {
 		console.error(...params);
 	}
 };

@@ -34,7 +34,6 @@ blogsRouter.put('/:id', userExtractor, async (req, res) => {
 
 	const blog = await Blog.findById(id);
 	if (!blog) throw Error('DeletedResource');
-	if (req.user.id !== blog.user.toString()) throw Error('Unauthorized');
 
 	const updatedBlog = await Blog.findByIdAndUpdate(id, data, {
 		new: true,
@@ -53,7 +52,7 @@ blogsRouter.delete('/:id', userExtractor, async (req, res) => {
 	if (req.user.id !== blog.user.toString()) throw Error('Unauthorized');
 
 	const user = await User.findById(blog.user);
-	user.blogs = user.blogs.filter(blogId => blogId !== blog._id);
+	user.blogs = user.blogs.filter((blogId) => blogId !== blog._id);
 
 	await blog.deleteOne();
 	await user.save();

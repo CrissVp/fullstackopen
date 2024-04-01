@@ -1,7 +1,7 @@
 require('express-async-errors');
 
 const middlewares = require('./utils/middleware');
-const { DB_URI } = require('./utils/config');
+const { DB_URI, ENVIRONMENT } = require('./utils/config');
 const logger = require('./utils/logger');
 const mongoose = require('mongoose');
 const express = require('express');
@@ -16,15 +16,22 @@ const loginRouter = require('./controllers/login');
 mongoose
 	.connect(DB_URI)
 	.then(() => logger.info('Connected to MongoDB'))
-	.catch(err => logger.error('Error connecting to MongoDB: ', err.message));
+	.catch((err) => logger.error('Error connecting to MongoDB: ', err.message));
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan('tiny'));
 app.use(middlewares.tokenExtractor);
+
 app.use('/api/blogs', blogsRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
+
+if (ENVIRONMENT === 'test') {
+	const testingRouter = require('./controllers/testing');
+	app.use('/api/testing', testingRouter);
+}
+
 app.use(middlewares.unknownEndpoint);
 app.use(middlewares.errorHandler);
 

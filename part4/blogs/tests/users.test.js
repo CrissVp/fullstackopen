@@ -8,15 +8,15 @@ const bcrypt = require('bcrypt');
 const app = require('../app');
 const api = supertest(app);
 
-beforeEach(async () => {
-	await User.deleteMany({});
-
-	const passwordHash = await bcrypt.hash('test', 10);
-	const user = new User({ username: 'test', passwordHash });
-	await user.save();
-});
-
 describe('users creation', () => {
+	beforeEach(async () => {
+		await User.deleteMany({});
+
+		const passwordHash = await bcrypt.hash('TEST', 10);
+		const user = new User({ username: 'TEST', passwordHash });
+		await user.save();
+	});
+
 	test('succeed with statuscode 201 with valid data', async () => {
 		const newUser = {
 			username: 'Test1',
@@ -31,7 +31,7 @@ describe('users creation', () => {
 			.expect('Content-Type', /application\/json/);
 
 		const usersInDb = await helper.getUsersInDb();
-		const usernames = usersInDb.map(u => u.username);
+		const usernames = usersInDb.map((u) => u.username);
 		assert(usernames.includes(newUser.username));
 	});
 
@@ -54,9 +54,9 @@ describe('users creation', () => {
 		const usersAtStart = await helper.getUsersInDb();
 
 		const newUser = {
-			username: 'test',
-			name: 'Test Test',
-			password: 'test',
+			username: 'TEST',
+			name: 'TEST TEST',
+			password: 'TEST',
 		};
 
 		const response = await api.post('/api/users').send(newUser).expect(400);

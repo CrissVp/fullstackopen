@@ -36,13 +36,17 @@ const App = () => {
     personsService
       .create(newPerson)
       .then(data => {
-        setPersons(persons.concat(data));
-        setNewNumber('');
         setNewName('');
+        setNewNumber('');
+        setPersons(persons.concat(data));
+        setNotification({ message: `Successfully Added ${newPerson.name}`, type: 'success' });
+        setTimeout(() => { setNotification({}) }, 3000);
+      })
+      .catch(err => {
+        console.log({ err })
+        setNotification({ message: err.response.data.error, type: 'error' });
+        setTimeout(() => { setNotification({}) }, 3000);
       });
-
-    setNotification({ message: `Successfully Added ${newPerson.name}`, type: 'success' });
-    setTimeout(() => { setNotification({}) }, 3000);
   };
 
   const modifyPerson = (person) => {
@@ -59,9 +63,7 @@ const App = () => {
         setTimeout(() => { setNotification({}) }, 3000);
       })
       .catch(err => {
-        setPersons(persons.filter(p => p.id !== person.id));
-
-        setNotification({ message: `Information of ${modifiedPerson.name} has already been removed from server`, type: 'error' });
+        setNotification({ message: err.response.data.error, type: 'error' });
         setTimeout(() => { setNotification({}) }, 3000);
       })
   };
