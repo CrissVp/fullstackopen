@@ -1,0 +1,90 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+h2 {
+	margin-block: 15px;
+}
+
+button,
+input {
+	border: none;
+	outline: none;
+}
+
+.anecdotes {
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.votes {
+	margin-top: 2px;
+	font-size: 14px;
+	color: rgb(128, 128, 128);
+}
+
+.votes button {
+	color: #fff;
+	margin-right: 8px;
+	border-radius: 5px;
+	padding: 0 6px;
+	background-color: #4b4b4b;
+}
+
+.votes button:hover {
+	cursor: pointer;
+	background-color: #000;
+}
+
+.form input,
+.filterInput {
+	width: 200px;
+	font-size: 15px;
+	padding: 6px 15px;
+	margin-bottom: 10px;
+	border-radius: 9999px;
+	color: rgb(41, 41, 41);
+	background-color: #ebebeb;
+}
+
+.filterInput span {
+	font-weight: 600;
+}
+
+.filterInput input {
+	font-size: 14px;
+	margin-left: 5px;
+	background-color: transparent;
+}
+
+.form button {
+	color: #fff;
+	font-size: 15px;
+	padding: 2px 10px;
+	border-radius: 10px;
+	background-color: rgb(11, 113, 230);
+}
+
+.form button:hover {
+	cursor: pointer;
+	background-color: rgb(43, 135, 240);
+}
+
+.notification {
+	font-size: 15px;
+	font-weight: 600;
+	color: #585858;
+	padding: 4px 20px;
+	margin-bottom: 20px;
+	border-radius: 9999px;
+	background-color: rgba(44, 247, 54, 0.7);
+}
