@@ -1,0 +1,21 @@
+.container {
+	gap: 10px;
+	display: flex;
+	color: #d8d8d8;
+}
+
+.container button {
+	border: none;
+	outline: none;
+	font-size: 16px;
+	color: rgb(221, 0, 0);
+	background-color: transparent;
+	text-decoration: underline transparent;
+	transition: text-decoration-color 0.2s ease-in-out;
+}
+
+.container button:hover {
+	cursor: pointer;
+	color: rgb(255, 0, 0);
+	text-decoration-color: rgb(255, 0, 0);
+}

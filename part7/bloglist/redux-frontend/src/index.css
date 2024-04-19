@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+		sans-serif;
+}
+
+p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+button,
+input,
+textarea {
+	outline: none;
+	border: none;
+}
+
+.app_container {
+	gap: 20px;
+	padding: 20px;
+	display: flex;
+	margin: 0 auto;
+	max-width: 600px;
+	flex-direction: column;
+}

@@ -1,0 +1,26 @@
+.blogs_page {
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.blogs_page_header {
+	display: flex;
+	padding-block: 10px;
+	justify-content: space-between;
+	border-bottom: 1px solid #b6b6b6;
+}
+
+.blogs_page_header button {
+	border: none;
+	outline: none;
+	color: #fff;
+	font-weight: 600;
+	padding: 6px 20px;
+	border-radius: 999px;
+	background-color: rgb(71, 138, 214);
+}
+
+.blogs_page_header button:hover {
+	cursor: pointer;
+}

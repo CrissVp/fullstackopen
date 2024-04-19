@@ -1,0 +1,17 @@
+.notification {
+	font-size: 15px;
+	font-weight: 600;
+	color: #585858;
+	padding: 4px 20px;
+	margin-bottom: 20px;
+	border-radius: 9999px;
+}
+
+.success {
+	background-color: rgba(44, 247, 54, 0.7);
+}
+
+.error {
+	background-color: rgb(224, 55, 55);
+	color: #dadada;
+}

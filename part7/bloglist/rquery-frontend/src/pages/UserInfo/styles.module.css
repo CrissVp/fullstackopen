@@ -1,0 +1,12 @@
+.user_info_page {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user_info_page ul {
+  gap: 6px;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+}
