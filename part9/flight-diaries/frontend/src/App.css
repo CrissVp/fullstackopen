@@ -1,0 +1,18 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+form button {
+  color: #000;
+  padding: 6px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+form div {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  margin-block: 10px;
+}

@@ -1,0 +1,12 @@
+* {
+	box-sizing: border-box;
+}
+
+.css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+	margin: 0 !important;
+}
+
+.css-uzu45a-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+	min-height: 40px !important;
+	max-height: 40px !important;
+}
